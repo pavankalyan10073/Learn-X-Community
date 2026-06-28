@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#FF6B00">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>Data Structures & Algorithms — Learn X Community</title>
 <link rel="icon" type="image/png" href="images/LOGO_1.png">
 <link rel="apple-touch-icon" href="images/LOGO_1.png">
@@ -217,29 +221,58 @@
 }
 
 @media(max-width:900px){
-
 .video-grid,
 .notes-list,
 .interview-grid{
     grid-template-columns:repeat(2,1fr);
 }
-
 }
 
 @media(max-width:600px){
-
 .video-grid,
 .notes-list,
 .interview-grid{
     grid-template-columns:1fr;
 }
-
 .track-hero{
     padding:120px 20px 50px;
 }
-
+.track-hero h1{
+    font-size:1.8rem;
+}
+.track-stats{
+    gap:20px;
+}
+.track-stat-num{
+    font-size:1.3rem;
+}
+.subtopic-tabs{
+    gap:6px;
+}
+.subtopic-tab{
+    padding:8px 14px;
+    font-size:.82rem;
+}
+.track-section-header h2{
+    font-size:1.2rem;
+}
 }
 
+@media(max-width:400px){
+.track-hero{
+    padding:100px 16px 40px;
+}
+.track-hero h1{
+    font-size:1.5rem;
+}
+.subtopic-tab{
+    padding:7px 10px;
+    font-size:.75rem;
+}
+.track-stat-num{
+    font-size:1.1rem;
+}
+}
 </style>
 
 </head>
@@ -253,7 +286,7 @@
 <a href="index.html" class="logo">
 <img src="images/Logo.png"
 alt="Learn X Community"
-style="height:56px;width:auto;max-width:200px;object-fit:contain">
+style="height:clamp(36px,8vw,56px);width:auto;max-width:200px;object-fit:contain">
 </a>
 
 <div class="nav-links" id="nl">
@@ -1382,7 +1415,7 @@ document.querySelectorAll(".video-card").forEach(card=>{
 <div class="wrap">
 <div class="fg2">
 <div class="fb">
-<a href="index.html" class="logo"><img src="images/Logo.png" alt="Learn X Community" style="height:56px;width:auto;max-width:200px;object-fit:contain;border-radius:6px"></a>
+<a href="index.html" class="logo"><img src="images/Logo.png" alt="Learn X Community" style="height:clamp(36px,8vw,56px);width:auto;max-width:200px;object-fit:contain;border-radius:6px"></a>
 <p>The First Telugu Student Learning & Startup Community. Built by students, for students.</p>
 </div>
 <div class="fl">
