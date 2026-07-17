@@ -1,0 +1,17 @@
+# Backups (not part of the site)
+*_backup.txt
+*_backup/
+backup/
+backups/
+
+# Node / deps
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
