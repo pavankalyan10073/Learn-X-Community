@@ -35,7 +35,7 @@ const AUTH = {
   async googleSignUp() {
     const { data, error } = await this._sb.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: window.location.href }
+      options: { redirectTo: window.location.origin + "/index.html" }
     });
     if (error) throw error;
     return data; // triggers redirect; result handled in onAuthChange
@@ -76,17 +76,39 @@ const AUTH = {
 };
 
 /* ---------- DB (Postgres tables) ---------- */
+// Create / refresh a profile row for ANY authenticated user (Google or email,
+// new or existing). Safe to call repeatedly.
 async function ensureProfile(user, extra = {}) {
-  // upsert a profile row so the user_id is known for form inserts
   if (!user) return;
+  const provider = user.app_metadata?.provider
+    || (user.identities && user.identities[0] && user.identities[0].provider)
+    || (user.user_metadata && user.user_metadata.full_name ? "email" : "email");
   const { error } = await client.from("profiles").upsert({
     id: user.id,
-    full_name: user.user_metadata?.full_name || user.email,
+    full_name: user.user_metadata?.full_name || user.email?.split("@")[0] || "Learner",
     email: user.email,
-    provider: user.app_metadata?.provider || "email",
+    phone: user.phone || null,
+    provider,
     ...extra
   }, { onConflict: "id" });
   if (error) console.warn("profile upsert warn:", error.message);
+}
+
+// Called automatically whenever a session is present (incl. after OAuth return).
+// Creates the profile and, on auth pages, sends the user home.
+function autoHandleSession(user) {
+  if (!user || !client) return;
+  const isAuthPage = /(signup|login)\.html$/.test(window.location.pathname);
+  ensureProfile(user).catch(() => {}).finally(() => {
+    if (isAuthPage) window.location.href = "index.html";
+  });
+}
+
+if (client) {
+  // React to OAuth redirect / login / signup immediately
+  AUTH.onAuthChange(autoHandleSession);
+  // Also check the current session on load (handles page refresh while logged in)
+  client.auth.getUser().then(({ data }) => { if (data.user) autoHandleSession(data.user); }).catch(() => {});
 }
 
 const DB = {
