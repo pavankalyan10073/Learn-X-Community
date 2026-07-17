@@ -393,19 +393,20 @@
   // Lazily load Firebase auth only when needed
   var authLoaded=false;
   function loadAuth(){
-    if(authLoaded) return Promise.resolve();
+    if(window.AUTH&&window.DB) return Promise.resolve(true);
+    if(authLoaded) return waitAuth();
     authLoaded=true;
     return new Promise(function(resolve){
       var s=document.createElement('script');
       s.src='supabase-config.js';
-      s.onload=function(){ import('auth.js').then(resolve).catch(function(e){ console.warn('auth load failed',e); resolve(); }); };
-      s.onerror=function(){ import('auth.js').then(resolve).catch(function(){}); resolve(); };
+      s.onload=function(){ import('auth.js').then(waitAuth).then(resolve).catch(function(e){ console.warn('auth load failed',e); resolve(false); }); };
+      s.onerror=function(){ import('auth.js').then(waitAuth).then(resolve).catch(function(){ resolve(false); }); };
       document.head.appendChild(s);
     });
   }
-  function readyAuth(){
+  function waitAuth(){
     return new Promise(function(res){
-      var w=0;(function c(){ if(window.AUTH&&window.DB) return res(true); if(w>=6000) return res(false); w+=120; setTimeout(c,120); })();
+      var w=0;(function c(){ if(window.AUTH&&window.DB) return res(true); if(w>=8000){ console.warn('AUTH never initialised'); return res(false);} w+=120; setTimeout(c,120); })();
     });
   }
 
@@ -442,7 +443,7 @@
     if(password.length<6){setInvalid('suPassword',1);showErr('suPassword','Password must be at least 6 characters',1);valid=false;}
     if(password!==confirm||!confirm){setInvalid('suConfirm',1);showErr('suConfirm','Passwords do not match',1);valid=false;}
     if(!valid)return;
-    loadAuth().then(readyAuth).then(function(ok){
+    loadAuth().then(function(ok){
       if(ok&&window.AUTH&&window.DB){
         window.AUTH.emailSignUp(name,email,password).then(function(user){
           if(!user){ return; }
@@ -456,7 +457,7 @@
   });
 
   document.getElementById('googleSignup').addEventListener('click',function(){
-    loadAuth().then(readyAuth).then(function(ok){
+    loadAuth().then(function(ok){
       if(ok&&window.AUTH){
         // Supabase OAuth redirects to Google then back to the site; profile is auto-created
         window.AUTH.googleSignUp().catch(function(err){

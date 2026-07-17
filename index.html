@@ -581,10 +581,14 @@
   window.__loadAuth = function () {
     if (window.__authLoading) return;
     window.__authLoading = true;
-    // load config globals first, then the Supabase module
+    // load config globals first, then the Supabase module, then wait until AUTH is live
     var s = document.createElement('script');
     s.src = 'supabase-config.js';
-    s.onload = function () { import('auth.js').catch(function (e) { console.warn('Auth load failed:', e); }); };
+    s.onload = function () {
+      import('auth.js').then(function(){
+        var w=0;(function c(){ if(window.AUTH&&window.DB) return; if(w>=8000) return; w+=120; setTimeout(c,120); })();
+      }).catch(function (e) { console.warn('Auth load failed:', e); });
+    };
     s.onerror = function () { import('auth.js').catch(function () {}); };
     document.head.appendChild(s);
   };
