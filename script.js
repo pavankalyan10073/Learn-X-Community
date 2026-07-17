@@ -272,6 +272,38 @@ function initForms(){
   setupPopup('joinCommunityOverlay', 'joinCommunityClose', 'joinCommunityFrm', 'joinCommunitySuccess', 'saveJoinCommunity');
 }
 
+// Show logged-in user in the nav (name + logout) when a session exists
+function syncNavUser(){
+  var cta=document.getElementById('navCta');
+  var userBox=document.getElementById('navUser');
+  var av=document.getElementById('navAv');
+  var uname=document.getElementById('navUname');
+  var logout=document.getElementById('navLogout');
+  if(!cta||!userBox) return;
+  if(!(window.AUTH&&window.AUTH.onAuthChange)){
+    // auth.js (module) may not be ready yet — retry shortly
+    return setTimeout(syncNavUser, 150);
+  }
+  function paint(user){
+    if(user){
+      var name=(user.user_metadata&&user.user_metadata.full_name)||(user.email?user.email.split('@')[0]:'User');
+      uname.textContent=name;
+      av.textContent=(name[0]||'U').toUpperCase();
+      cta.hidden=true; cta.style.display='none';
+      userBox.hidden=false; userBox.style.display='flex';
+    } else {
+      cta.hidden=false; cta.style.display='';
+      userBox.hidden=true; userBox.style.display='none';
+    }
+  }
+  window.AUTH.onAuthChange(paint);
+  window.AUTH.currentUser().then(paint).catch(function(){ paint(null); });
+  if(logout) logout.addEventListener('click',function(){
+    if(window.AUTH) window.AUTH.logout().then(function(){ window.location.reload(); }).catch(function(){ window.location.reload(); });
+  });
+}
+
 initForms();
+syncNavUser();
 
 })();
