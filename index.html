@@ -576,31 +576,9 @@
 <script defer src="auth-ui.js"></script>
 <script defer src="script.js"></script>
 <script defer src="animations.js"></script>
-<!-- Supabase Auth is lazy-loaded only when a user interacts with an auth button -->
-<script>
-  window.__loadAuth = function () {
-    if (window.__authLoading) return;
-    window.__authLoading = true;
-    // load config globals first, then the Supabase module, then wait until AUTH is live
-    var s = document.createElement('script');
-    s.src = 'supabase-config.js';
-    s.onload = function () {
-      import('auth.js').then(function(){
-        var w=0;(function c(){ if(window.AUTH&&window.DB) return; if(w>=8000) return; w+=120; setTimeout(c,120); })();
-      }).catch(function (e) { console.warn('Auth load failed:', e); });
-    };
-    s.onerror = function () { import('auth.js').catch(function () {}); };
-    document.head.appendChild(s);
-  };
-  document.addEventListener('DOMContentLoaded', function () {
-    var authEls = document.querySelectorAll('[data-auth], #fctaStartup, #fctaJoin, #googleLogin, #googleSignup, #jf');
-    authEls.forEach(function (el) {
-      el.addEventListener('mouseenter', window.__loadAuth, { once: true });
-      el.addEventListener('focus', window.__loadAuth, { once: true });
-      el.addEventListener('click', window.__loadAuth, { once: true });
-    });
-  });
-</script>
+<!-- Supabase config + auth loaded eagerly (module scripts are deferred = non-blocking) -->
+<script src="supabase-config.js"></script>
+<script type="module" src="auth.js"></script>
 </body>
 </html>
 

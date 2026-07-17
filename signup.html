@@ -382,6 +382,8 @@
   </div>
 </div>
 
+<script src="supabase-config.js"></script>
+<script type="module" src="auth.js"></script>
 <script>
 (function(){
   // Hide loader fast (perceived speed)
@@ -391,18 +393,10 @@
   setTimeout(hide,1200);
 
   // Lazily load Firebase auth only when needed
-  var authLoaded=false;
+  // auth.js is loaded eagerly as a module in <head>; just wait until AUTH/DB are live
   function loadAuth(){
     if(window.AUTH&&window.DB) return Promise.resolve(true);
-    if(authLoaded) return waitAuth();
-    authLoaded=true;
-    return new Promise(function(resolve){
-      var s=document.createElement('script');
-      s.src='supabase-config.js';
-      s.onload=function(){ import('auth.js').then(waitAuth).then(resolve).catch(function(e){ console.warn('auth load failed',e); resolve(false); }); };
-      s.onerror=function(){ import('auth.js').then(waitAuth).then(resolve).catch(function(){ resolve(false); }); };
-      document.head.appendChild(s);
-    });
+    return waitAuth();
   }
   function waitAuth(){
     return new Promise(function(res){

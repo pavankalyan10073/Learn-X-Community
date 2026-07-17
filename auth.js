@@ -2,7 +2,7 @@
    SUPABASE AUTH & DB  (replaces Firebase)
    Loaded as an ES module. Exposes window.AUTH and window.DB.
    ════════════════════════════════════════════════════════════════ */
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
 const url = window.SUPABASE_URL;
 const key = window.SUPABASE_ANON_KEY;
