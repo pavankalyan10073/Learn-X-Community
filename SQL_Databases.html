@@ -7,7 +7,7 @@
 <meta name="mobile.web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<title>SQL & Databases � Learn X Community</title>
+<title>SQL & Databases  Learn X Community</title>
 <link rel="icon" type="image/png" href="images/LOGO_1.png">
 <link rel="apple-touch-icon" href="images/LOGO_1.png">
 
@@ -18,268 +18,25 @@
 <script type="module" src="auth.js"></script>
 <script src="auth-ui.js"></script>
 
-<style>
-
-.track-hero{
-    padding:140px 32px 60px;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-    background:linear-gradient(180deg,var(--bg),var(--bg2));
-}
-
-.track-hero::before{
-    content:'';
-    position:absolute;
-    top:-200px;
-    left:50%;
-    transform:translateX(-50%);
-    width:800px;
-    height:800px;
-    background:radial-gradient(circle,rgba(255,107,0,.06),transparent 70%);
-    border-radius:50%;
-}
-
-.track-hero-content{
-    position:relative;
-    z-index:2;
-    max-width:850px;
-    margin:auto;
-}
-
-.track-icon{
-    width:74px;
-    height:74px;
-    border-radius:20px;
-    display:grid;
-    place-items:center;
-    font-size:2rem;
-    margin:auto;
-    background:var(--g);
-    box-shadow:0 10px 30px rgba(255,107,0,.25);
-}
-
-.track-hero h1{
-    margin:20px 0 12px;
-    font-size:clamp(2.2rem,4vw,3.2rem);
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:800;
-}
-
-.track-hero p{
-    color:var(--t2);
-    max-width:620px;
-    margin:auto;
-    line-height:1.8;
-}
-
-.track-stats{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:32px;
-    margin-top:35px;
-}
-
-.track-stat{text-align:center;}
-
-.track-stat-num{
-    font-size:1.6rem;
-    font-weight:800;
-    color:var(--p);
-    font-family:'Space Grotesk';
-}
-
-.track-stat-label{
-    font-size:.8rem;
-    color:var(--t3);
-}
-
-.track-section{
-    padding:70px 0;
-    border-top:1px solid var(--brd2);
-}
-
-.track-section-alt{
-    background:var(--bg2);
-}
-
-.track-section-header{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    margin-bottom:28px;
-}
-
-.track-section-icon{
-    width:46px;
-    height:46px;
-    display:grid;
-    place-items:center;
-    border-radius:12px;
-    background:var(--pa);
-    font-size:1.1rem;
-}
-
-.track-section-header h2{
-    font-size:1.5rem;
-    font-family:'Space Grotesk';
-    font-weight:700;
-}
-
-.track-section-header span{
-    margin-left:auto;
-    color:var(--t3);
-    font-size:.8rem;
-}
-
-.subtopic-tabs{
-    display:flex;
-    gap:10px;
-    margin-bottom:30px;
-    flex-wrap:wrap;
-}
-
-.subtopic-tab{
-    padding:10px 20px;
-    border-radius:10px;
-    border:1px solid var(--brd);
-    background:var(--bg);
-    color:var(--t3);
-    cursor:pointer;
-    transition:.3s;
-    font-weight:600;
-}
-
-.subtopic-tab:hover,
-.subtopic-tab.active{
-    background:var(--t);
-    color:#fff;
-    border-color:var(--t);
-}
-
-.video-grid,
-.notes-list,
-.interview-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.video-card{
-    background:var(--bg);
-    border:1px solid var(--brd);
-    border-radius:18px;
-    overflow:hidden;
-    transition:.35s;
-    text-decoration:none;
-    color:inherit;
-}
-
-.video-card:hover{
-    transform:translateY(-6px);
-    box-shadow:var(--sh4);
-    border-color:var(--pa2);
-}
-
-.video-thumb{
-    aspect-ratio:16/9;
-    overflow:hidden;
-    background:var(--bg2);
-}
-
-.video-thumb img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.35s;
-}
-
-.video-card:hover img{
-    transform:scale(1.06);
-}
-
-.video-info{
-    padding:18px;
-}
-
-.video-info h4{
-    font-size:.95rem;
-    margin-bottom:6px;
-}
-
-.video-info p{
-    font-size:.82rem;
-    color:var(--t3);
-    line-height:1.6;
-}
-
-.video-meta{
-    display:flex;
-    gap:12px;
-    margin-top:12px;
-    font-size:.75rem;
-    color:var(--t3);
-}
-
-@media(max-width:900px){
-.video-grid,
-.notes-list,
-.interview-grid{
-    grid-template-columns:repeat(2,1fr);
-}
-}
-
-@media(max-width:600px){
-.video-grid,
-.notes-list,
-.interview-grid{
-    grid-template-columns:1fr;
-}
-.track-hero{
-    padding:120px 20px 50px;
-}
-.track-hero h1{
-    font-size:1.8rem;
-}
-.track-stats{
-    gap:20px;
-}
-.track-stat-num{
-    font-size:1.3rem;
-}
-.subtopic-tabs{
-    gap:6px;
-}
-.subtopic-tab{
-    padding:8px 14px;
-    font-size:.82rem;
-}
-.track-section-header h2{
-    font-size:1.2rem;
-}
-}
-
-@media(max-width:400px){
-.track-hero{
-    padding:100px 16px 40px;
-}
-.track-hero h1{
-    font-size:1.5rem;
-}
-.subtopic-tab{
-    padding:7px 10px;
-    font-size:.75rem;
-}
-.track-stat-num{
-    font-size:1.1rem;
-}
-}
-</style>
-
 </head>
 
 <body>
+
+<!-- MAANG BANNER POPUP -->
+<div class="maang-popup-overlay" id="maangPopupOverlay">
+  <div class="maang-popup">
+    <button class="maang-close" id="maangPopupClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <img src="images/founding members/MAANG Learn X.png" alt="MAANG Learn X">
+    <div class="maang-btns">
+      <a href="https://maang-learn-x.vercel.app/" target="_blank" rel="noopener" class="maang-btn maang-visit">Visit Site</a>
+      <a href="https://maang-learn-x.vercel.app/internships" target="_blank" rel="noopener" class="maang-btn maang-intern">Paid Internships</a>
+    </div>
+  </div>
+</div>
+
+
 
 <nav class="nav" id="nav">
 <div class="nav-inner">
@@ -301,13 +58,13 @@
 
 <div class="track-hero-content">
 
-<div class="track-icon">???</div>
+<div class="track-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
 
 <h1>SQL & Databases</h1>
 
 <p>
 Master SQL queries, database design and optimization.
-From basic SELECTs to complex joins, indexing and transactions �
+From basic SELECTs to complex joins, indexing and transactions 
 everything for data-driven roles.
 </p>
 
@@ -353,11 +110,9 @@ everything for data-driven roles.
 <div id="sql" class="tab-content">
 
 <div class="track-section-header">
-<div class="track-section-icon">?</div>
-<h2>Video Lectures � SQL</h2>
+<h2>Video Lectures  SQL</h2>
 <span>2 Videos</span>
 </div>
-
 <div class="video-grid">
 
 <a href="https://www.youtube.com/watch?v=HXV3zeQKqGY"
@@ -369,16 +124,13 @@ class="video-card">
 </div>
 
 <div class="video-info">
-<h4>SQL Tutorial � Full Database Course for Beginners</h4>
+<h4>SQL Tutorial  Full Database Course for Beginners</h4>
 <p>Complete SQL course covering CRUD operations, joins, aggregations, nested queries and schema design with MySQL.</p>
-
 <div class="video-meta">
-<span>?? YouTube</span>
-<span>? freeCodeCamp.org</span>
+<span>YouTube</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> freeCodeCamp.org</span>
 </div>
-
 </div>
-
 </a>
 
 <a href="https://youtube.com/playlist?list=PLxCzCOWd7aiFbom4rYyl5qROgqYuCuAPD&si=3jyugdsvvMyA4Hc-"
@@ -392,16 +144,12 @@ class="video-card">
 <div class="video-info">
 <h4>SQL Full Course - Gate Smashers</h4>
 <p>Learn SQL basics, aggregation, joins by Gate Smashers</p>
-
 <div class="video-meta">
-<span>?? YouTube</span>
-<span>? Gate Smashers</span>
+<span>YouTube</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Gate Smashers</span>
 </div>
-
 </div>
-
 </a>
-
 </div>
 
 </div>
@@ -411,11 +159,9 @@ class="video-card">
 <div id="dbdesign" class="tab-content" style="display:none;">
 
 <div class="track-section-header">
-<div class="track-section-icon">?</div>
-<h2>Video Lectures � Database Design</h2>
+<h2>Video Lectures  Database Design</h2>
 <span>2 Videos</span>
 </div>
-
 <div class="video-grid">
 
 <a href="https://www.youtube.com/watch?v=ztHopE5Wnpc"
@@ -427,16 +173,13 @@ class="video-card">
 </div>
 
 <div class="video-info">
-<h4>Database Design Course � Full Tutorial for Beginners</h4>
+<h4>Database Design Course  Full Tutorial for Beginners</h4>
 <p>Complete database design course covering ER modeling, normalization, keys, indexes and relational concepts.</p>
-
 <div class="video-meta">
-<span>?? YouTube</span>
-<span>? freeCodeCamp.org</span>
+<span>YouTube</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> freeCodeCamp.org</span>
 </div>
-
 </div>
-
 </a>
 
 <a href="https://www.youtube.com/watch?v=26ls5lNiijk"
@@ -448,18 +191,14 @@ class="video-card">
 </div>
 
 <div class="video-info">
-<h4>Relational Database Design � Full Course</h4>
-<p>Learn entity-relationship modeling, normalization (1NF�BCNF), indexing strategies and query optimization.</p>
-
+<h4>Relational Database Design  Full Course</h4>
+<p>Learn entity-relationship modeling, normalization (1NFBCNF), indexing strategies and query optimization.</p>
 <div class="video-meta">
-<span>?? YouTube</span>
-<span>? freeCodeCamp.org</span>
+<span>YouTube</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> freeCodeCamp.org</span>
 </div>
-
 </div>
-
 </a>
-
 </div>
 
 </div>
@@ -475,13 +214,12 @@ class="video-card">
 <div class="wrap">
 
 <div class="track-section-header">
-<div class="track-section-icon">??</div>
+<div class="track-section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
 <h2>Notes</h2>
 <span id="notes-count-header">2 Notes</span>
 </div>
 
 <div id="notes-sql" class="notes-tab-content">
-
 <div class="notes-list">
 
 <a href="https://github.com/krishnasagrawal/SQL-and-DBMS-Study-Resources/blob/main/Free%20SQL%20Notes.pdf"
@@ -490,19 +228,15 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>?? SQL-and-DBMS-Study-Resources</h4>
-
+<h4> SQL-and-DBMS-Study-Resources</h4>
 <p>
 Comprehensive written companion covering schema design, CRUD operations, joins, nested queries and triggers.
 </p>
-
 <div class="video-meta">
-<span>? Popular</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>Popular</span>
 <span>Guide</span>
 </div>
-
 </div>
-
 </a>
 
 <a href="https://www.geeksforgeeks.org/sql/sql-tutorial/"
@@ -511,27 +245,21 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>?? SQL Complete Tutorial � GeeksforGeeks</h4>
-
+<h4> SQL Complete Tutorial  GeeksforGeeks</h4>
 <p>
 Structured Query Language (SQL) is the standard language used to interact with relational databases.
 </p>
-
 <div class="video-meta">
-<span>? Popular</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>Popular</span>
 <span>Tutorial</span>
 </div>
-
 </div>
-
 </a>
-
 </div>
 
 </div>
 
 <div id="notes-dbdesign" class="notes-tab-content" style="display:none;">
-
 <div class="notes-list">
 
 <a href="https://www.geeksforgeeks.org/dbms/database-design/"
@@ -540,19 +268,15 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>?? Database Design Tutorial � GeeksforGeeks</h4>
-
+<h4> Database Design Tutorial  GeeksforGeeks</h4>
 <p>
-Complete guide to ER modeling, normalization (1NF�5NF), functional dependencies and schema design.
+Complete guide to ER modeling, normalization (1NF5NF), functional dependencies and schema design.
 </p>
-
 <div class="video-meta">
-<span>? Popular</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>Popular</span>
 <span>Tutorial</span>
 </div>
-
 </div>
-
 </a>
 
 <a href="https://www.geeksforgeeks.org/dbms/database-design-in-dbms/"
@@ -561,21 +285,16 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>?? Database Design in DBMS - GeeksforGeeks</h4>
-
+<h4> Database Design in DBMS - GeeksforGeeks</h4>
 <p>
 Database design is a systematic process that involves a set of procedures and tasks to implement a database effectively.
 </p>
-
 <div class="video-meta">
-<span>? Popular</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>Popular</span>
 <span>Guide</span>
 </div>
-
 </div>
-
 </a>
-
 </div>
 
 </div>
@@ -592,7 +311,7 @@ Database design is a systematic process that involves a set of procedures and ta
 
 <div class="track-section-header">
 
-<div class="track-section-icon">??</div>
+<div class="track-section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
 
 <h2>Interview Questions</h2>
 
@@ -601,7 +320,6 @@ Database design is a systematic process that involves a set of procedures and ta
 </div>
 
 <div id="interview-sql" class="interview-tab-content">
-
 <div class="interview-grid">
 
 <a href="https://www.geeksforgeeks.org/sql/sql-interview-questions/"
@@ -610,19 +328,15 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>SQL Interview Questions � GeeksforGeeks</h4>
-
+<h4>SQL Interview Questions  GeeksforGeeks</h4>
 <p>
 Comprehensive collection of SQL interview questions covering joins, indexes, normalization, subqueries and optimization.
 </p>
-
 <div class="video-meta">
 <span>Medium</span>
 <span>SQL</span>
 </div>
-
 </div>
-
 </a>
 
 <a href="https://www.geeksforgeeks.org/sql/sql-query-interview-questions/"
@@ -631,19 +345,15 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>SQL Query Interview Questions � GeeksforGeeks</h4>
-
+<h4>SQL Query Interview Questions  GeeksforGeeks</h4>
 <p>
 Hands-on query writing questions including nth highest salary, duplicate removal, joins and aggregations.
 </p>
-
 <div class="video-meta">
 <span>Medium</span>
 <span>SQL</span>
 </div>
-
 </div>
-
 </a>
 
 <a href="https://www.geeksforgeeks.org/sql/data-manipulation-and-querying-dml-query-processing-interview-questions-sql/"
@@ -652,27 +362,21 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>DML Query Processing Questions � GeeksforGeeks</h4>
-
+<h4>DML Query Processing Questions  GeeksforGeeks</h4>
 <p>
 Advanced query processing questions covering INSERT, UPDATE, DELETE, window functions and CTEs.
 </p>
-
 <div class="video-meta">
 <span>Hard</span>
 <span>SQL</span>
 </div>
-
 </div>
-
 </a>
-
 </div>
 
 </div>
 
 <div id="interview-dbdesign" class="interview-tab-content" style="display:none;">
-
 <div class="interview-grid">
 
 <a href="https://www.geeksforgeeks.org/sql/advanced-sql-and-optimization-interview-questions-sql/"
@@ -681,19 +385,15 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>Advanced SQL & Optimization Questions � GeeksforGeeks</h4>
-
+<h4>Advanced SQL & Optimization Questions  GeeksforGeeks</h4>
 <p>
 Stored procedures, triggers, window functions, indexing, deadlocks and query execution plans.
 </p>
-
 <div class="video-meta">
 <span>Hard</span>
 <span>Design</span>
 </div>
-
 </div>
-
 </a>
 
 <a href="https://www.geeksforgeeks.org/sql/30-sql-interview-questions-for-business-analyst-in-2025/"
@@ -702,19 +402,15 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>SQL Interview Questions for Business Analyst � GeeksforGeeks</h4>
-
+<h4>SQL Interview Questions for Business Analyst  GeeksforGeeks</h4>
 <p>
 30 essential SQL questions for analyst roles covering filtering, aggregation, joins and window functions.
 </p>
-
 <div class="video-meta">
 <span>Medium</span>
 <span>Design</span>
 </div>
-
 </div>
-
 </a>
 
 <a href="https://www.geeksforgeeks.org/gate/database-design-modeling-interview-questions/"
@@ -723,21 +419,16 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>Database Design & Modeling Interview Questions - DBMS � GeeksforGeeks</h4>
-
+<h4>Database Design & Modeling Interview Questions - DBMS  GeeksforGeeks</h4>
 <p>
 Core database concepts including ACID, normalization, indexing, concurrency control and NoSQL vs SQL.
 </p>
-
 <div class="video-meta">
 <span>Medium</span>
 <span>Design</span>
 </div>
-
 </div>
-
 </a>
-
 </div>
 
 </div>
@@ -842,8 +533,7 @@ document.querySelectorAll(".video-card").forEach(card=>{
 <a class="fcta-btn fcta-wa" id="fctaWa" href="https://chat.whatsapp.com/JkRpw04SvAk1ImTrjGTgyW" target="_blank" rel="noopener">
 <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.074 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 <span class="fcta-text">WhatsApp</span>
-<span class="fcta-tooltip">Join our WhatsApp Community</span>
-</button>
+<span class="fcta-tooltip">Join our WhatsApp Community</span></a>
 
 <button class="fcta-btn" id="fctaJoin">
 <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
@@ -853,7 +543,7 @@ document.querySelectorAll(".video-card").forEach(card=>{
 </div>
 
 
-<!-- --- POPUP � JOIN COMMUNITY --- -->
+<!-- --- POPUP  JOIN COMMUNITY --- -->
 <div class="popup-overlay" id="joinCommunityOverlay">
 <div class="popup">
 <button class="popup-close" id="joinCommunityClose">
@@ -868,10 +558,10 @@ document.querySelectorAll(".video-card").forEach(card=>{
 <div class="fg"><input type="text" id="jcCollege" placeholder="College Name"></div>
 <div class="fg"><input type="text" id="jcBranch" placeholder="Branch"></div>
 <div class="fg"><textarea id="jcGoal" placeholder="Your Career Goal"></textarea></div>
-<button type="submit" class="popup-submit">Submit ?</button>
+<button type="submit" class="popup-submit">Submit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
 </form>
 <div class="popup-success" id="joinCommunitySuccess">
-<div class="check">?</div>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
 <h3>Application Received!</h3>
 <p>We'll get back to you within 24 hours.</p>
 </div>
@@ -879,9 +569,9 @@ document.querySelectorAll(".video-card").forEach(card=>{
 </div>
 
 
-</div>
 
-<!-- --- POPUP � STARTUP --- -->
+
+<!-- --- POPUP  STARTUP --- -->
 <div class="popup-overlay" id="startupOverlay">
 <div class="popup">
 <button class="popup-close" id="startupClose">
@@ -894,18 +584,23 @@ document.querySelectorAll(".video-card").forEach(card=>{
 <div class="fg"><input type="email" id="startupEmail" placeholder="Email *" required><div class="err-msg">Please enter a valid email</div></div>
 <div class="fg"><input type="tel" id="startupPhone" placeholder="Phone Number *" required><div class="err-msg">Please enter a valid 10-digit phone</div></div>
 <div class="fg"><textarea id="startupIdea" placeholder="Your Startup Idea *" required></textarea><div class="err-msg">Please share your idea</div></div>
-<button type="submit" class="popup-submit">Submit Idea ?</button>
+<button type="submit" class="popup-submit">Submit Idea <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
 </form>
 <div class="popup-success" id="startupSuccess">
-<div class="check">?</div>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
 <h3>Idea Submitted!</h3>
-<p>We'll review and get back to you soon. Start building! ??</p>
+<p>We'll review and get back to you soon. Start building! </p>
 </div>
 </div>
 </div>
 <script src="script.js"></script>
+
+
 </body>
 </html>
+
+
+
 
 
 

@@ -306,4 +306,28 @@ function syncNavUser(){
 initForms();
 syncNavUser();
 
+// MAANG BANNER POPUP - 3-5s delay, shows on every visit/refresh
+(function(){
+  var overlay=document.getElementById('maangPopupOverlay');
+  if(!overlay) return;
+  var delay=3000+Math.random()*2000;
+  setTimeout(function(){
+    overlay.classList.add('open');
+    document.body.style.overflow='hidden';
+  },delay);
+  overlay.addEventListener('click',function(e){
+    if(e.target===overlay){
+      overlay.classList.remove('open');
+      document.body.style.overflow='';
+    }
+  });
+  var closeBtn=document.getElementById('maangPopupClose');
+  if(closeBtn){
+    closeBtn.addEventListener('click',function(){
+      overlay.classList.remove('open');
+      document.body.style.overflow='';
+    });
+  }
+})();
+
 })();

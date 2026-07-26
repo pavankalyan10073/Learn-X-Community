@@ -7,7 +7,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<title>Programming Language � Learn X Community</title>
+<title>Programming Language  Learn X Community</title>
 <link rel="icon" type="image/png" href="images/LOGO_1.png">
 <link rel="apple-touch-icon" href="images/LOGO_1.png">
 
@@ -18,290 +18,25 @@
 <script type="module" src="auth.js"></script>
 <script src="auth-ui.js"></script>
 
-<style>
-
-/* ============================
-   HERO
-============================ */
-
-.track-hero{
-    padding:140px 32px 60px;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-    background:linear-gradient(180deg,var(--bg),var(--bg2));
-}
-
-.track-hero::before{
-    content:'';
-    position:absolute;
-    top:-200px;
-    left:50%;
-    transform:translateX(-50%);
-    width:800px;
-    height:800px;
-    background:radial-gradient(circle,rgba(255,107,0,.06),transparent 70%);
-    border-radius:50%;
-}
-
-.track-hero-content{
-    position:relative;
-    z-index:2;
-    max-width:850px;
-    margin:auto;
-}
-
-.track-icon{
-    width:74px;
-    height:74px;
-    border-radius:20px;
-    display:grid;
-    place-items:center;
-    font-size:2rem;
-    margin:auto;
-    background:var(--g);
-    box-shadow:0 10px 30px rgba(255,107,0,.25);
-}
-
-.track-hero h1{
-    margin:20px 0 12px;
-    font-size:clamp(2.2rem,4vw,3.2rem);
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:800;
-}
-
-.track-hero p{
-    color:var(--t2);
-    max-width:620px;
-    margin:auto;
-    line-height:1.8;
-}
-
-.track-stats{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:32px;
-    margin-top:35px;
-}
-
-.track-stat{text-align:center;}
-
-.track-stat-num{
-    font-size:1.6rem;
-    font-weight:800;
-    color:var(--p);
-    font-family:'Space Grotesk';
-}
-
-.track-stat-label{
-    font-size:.8rem;
-    color:var(--t3);
-}
-
-/* ============================
-   COMMON SECTION
-============================ */
-
-.track-section{
-    padding:70px 0;
-    border-top:1px solid var(--brd2);
-}
-
-.track-section-alt{
-    background:var(--bg2);
-}
-
-.track-section-header{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    margin-bottom:28px;
-}
-
-.track-section-icon{
-    width:46px;
-    height:46px;
-    display:grid;
-    place-items:center;
-    border-radius:12px;
-    background:var(--pa);
-    font-size:1.1rem;
-}
-
-.track-section-header h2{
-    font-size:1.5rem;
-    font-family:'Space Grotesk';
-    font-weight:700;
-}
-
-.track-section-header span{
-    margin-left:auto;
-    color:var(--t3);
-    font-size:.8rem;
-}
-
-/* ============================
-   LANGUAGE TABS
-============================ */
-
-.subtopic-tabs{
-    display:flex;
-    gap:10px;
-    margin-bottom:30px;
-    flex-wrap:wrap;
-}
-
-.subtopic-tab{
-    padding:10px 20px;
-    border-radius:10px;
-    border:1px solid var(--brd);
-    background:var(--bg);
-    color:var(--t3);
-    cursor:pointer;
-    transition:.3s;
-    font-weight:600;
-}
-
-.subtopic-tab:hover,
-.subtopic-tab.active{
-    background:var(--t);
-    color:#fff;
-    border-color:var(--t);
-}
-
-/* ============================
-   CARD GRID
-============================ */
-
-.video-grid,
-.notes-list,
-.interview-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-/* ============================
-   VIDEO CARD
-============================ */
-
-.video-card{
-    background:var(--bg);
-    border:1px solid var(--brd);
-    border-radius:18px;
-    overflow:hidden;
-    transition:.35s;
-    text-decoration:none;
-    color:inherit;
-}
-
-.video-card:hover{
-    transform:translateY(-6px);
-    box-shadow:var(--sh4);
-    border-color:var(--pa2);
-}
-
-.video-thumb{
-    aspect-ratio:16/9;
-    overflow:hidden;
-    background:var(--bg2);
-}
-
-.video-thumb img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.35s;
-}
-
-.video-card:hover img{
-    transform:scale(1.06);
-}
-
-.video-info{
-    padding:18px;
-}
-
-.video-info h4{
-    font-size:.95rem;
-    margin-bottom:6px;
-}
-
-.video-info p{
-    font-size:.82rem;
-    color:var(--t3);
-    line-height:1.6;
-}
-
-.video-meta{
-    display:flex;
-    gap:12px;
-    margin-top:12px;
-    font-size:.75rem;
-    color:var(--t3);
-}
-
-/* Notes & Interview card CSS comes in Part 2 */
-
-@media(max-width:900px){
-.video-grid,
-.notes-list,
-.interview-grid{
-    grid-template-columns:repeat(2,1fr);
-}
-}
-
-@media(max-width:600px){
-.video-grid,
-.notes-list,
-.interview-grid{
-    grid-template-columns:1fr;
-}
-.track-hero{
-    padding:120px 20px 50px;
-}
-.track-hero h1{
-    font-size:1.8rem;
-}
-.track-stats{
-    gap:20px;
-}
-.track-stat-num{
-    font-size:1.3rem;
-}
-.subtopic-tabs{
-    gap:6px;
-}
-.subtopic-tab{
-    padding:8px 14px;
-    font-size:.82rem;
-}
-.track-section-header h2{
-    font-size:1.2rem;
-}
-}
-
-@media(max-width:400px){
-.track-hero{
-    padding:100px 16px 40px;
-}
-.track-hero h1{
-    font-size:1.5rem;
-}
-.subtopic-tab{
-    padding:7px 10px;
-    font-size:.75rem;
-}
-.track-stat-num{
-    font-size:1.1rem;
-}
-}
-</style>
-
 </head>
 
 <body>
+
+<!-- MAANG BANNER POPUP -->
+<div class="maang-popup-overlay" id="maangPopupOverlay">
+  <div class="maang-popup">
+    <button class="maang-close" id="maangPopupClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <img src="images/founding members/MAANG Learn X.png" alt="MAANG Learn X">
+    <div class="maang-btns">
+      <a href="https://maang-learn-x.vercel.app/" target="_blank" rel="noopener" class="maang-btn maang-visit">Visit Site</a>
+      <a href="https://maang-learn-x.vercel.app/internships" target="_blank" rel="noopener" class="maang-btn maang-intern">Paid Internships</a>
+    </div>
+  </div>
+</div>
+
+
 
 <!-- ===========================
      NAVBAR
@@ -329,7 +64,7 @@
 
 <div class="track-hero-content">
 
-<div class="track-icon">??</div>
+<div class="track-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
 
 <h1>Programming Languages</h1>
 
@@ -388,11 +123,9 @@ all in one place.
 <div id="cpp" class="tab-content">
 
 <div class="track-section-header">
-<div class="track-section-icon">?</div>
-<h2>Video Lectures � C++</h2>
+<h2>Video Lectures  C++</h2>
 <span>1 Playlist</span>
 </div>
-
 <div class="video-grid">
 
 <a href="https://youtube.com/playlist?list=PLxCzCOWd7aiF6yRNI5OHQsnUJQfl7Geqj&si=j1VVIH9hC4kozogC"
@@ -404,18 +137,14 @@ class="video-card">
 </div>
 
 <div class="video-info">
-<h4>Gates Smasher � Complete C++ Playlist</h4>
+<h4>Gates Smasher  Complete C++ Playlist</h4>
 <p>Complete C++ course covering basics, OOP, STL and interview preparation.</p>
-
 <div class="video-meta">
-<span>?? Playlist</span>
-<span>? Gates Smasher</span>
+<span>Playlist</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Gates Smasher</span>
 </div>
-
 </div>
-
 </a>
-
 </div>
 
 </div>
@@ -427,11 +156,9 @@ class="video-card">
 <div id="java" class="tab-content" style="display:none;">
 
 <div class="track-section-header">
-<div class="track-section-icon">?</div>
-<h2>Video Lectures � Java</h2>
+<h2>Video Lectures  Java</h2>
 <span>1 Video</span>
 </div>
-
 <div class="video-grid">
 
 <a href="https://youtu.be/eIrMbAQSU34?si=I1teZqbYL3xczpm5"
@@ -445,20 +172,15 @@ class="video-card">
 <div class="video-info">
 
 <h4>Java Complete Course</h4>
-
 <p>Learn Java from beginner to advanced with practical examples.</p>
-
 <div class="video-meta">
-<span>?? Full Course</span>
-<span>? 
+<span>Full Course</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> 
 Programming with Mosh
 </span>
 </div>
-
 </div>
-
 </a>
-
 </div>
 
 </div>
@@ -470,11 +192,9 @@ Programming with Mosh
 <div id="python" class="tab-content" style="display:none;">
 
 <div class="track-section-header">
-<div class="track-section-icon">?</div>
-<h2>Video Lectures � Python</h2>
+<h2>Video Lectures  Python</h2>
 <span>1 Playlist</span>
 </div>
-
 <div class="video-grid">
 
 <a href="https://youtu.be/UrsmFxEIp5k?si=VKIbcQB7aSMDME7-"
@@ -488,19 +208,14 @@ class="video-card">
 <div class="video-info">
 
 <h4>Python Complete Course</h4>
-
 <p>Master Python programming from basics to advanced concepts.</p>
-
 <div class="video-meta">
-<span>?? Full Course</span>
-<span>? CodeWithHarry</span>
+<span>Full Course</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> CodeWithHarry</span>
 </span>
 </div>
-
 </div>
-
 </a>
-
 </div>
 
 </div>
@@ -518,13 +233,12 @@ class="video-card">
 <div class="wrap">
 
 <div class="track-section-header">
-<div class="track-section-icon">??</div>
+<div class="track-section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
 <h2>Programming Notes</h2>
 <span id="notes-count">2 Notes</span>
 </div>
 
 <div id="notes-cpp" class="notes-tab-content">
-
 <div class="notes-list">
 
 <a href="https://www.geeksforgeeks.org/cpp/c-plus-plus/"
@@ -533,27 +247,21 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>?? C++ Complete Tutorial</h4>
-
+<h4> C++ Complete Tutorial</h4>
 <p>
 Learn C++, OOP, STL, Memory Management, Templates and Competitive Programming.
 </p>
-
 <div class="video-meta">
-<span>? Popular</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>Popular</span>
 <span>PDF + Tutorial</span>
 </div>
-
 </div>
-
 </a>
-
 </div>
 
 </div>
 
 <div id="notes-java" class="notes-tab-content" style="display:none;">
-
 <div class="notes-list">
 
 <a href="https://www.geeksforgeeks.org/java/java/"
@@ -562,27 +270,21 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>?? Java Complete Tutorial</h4>
-
+<h4> Java Complete Tutorial</h4>
 <p>
 Learn Java basics, OOP, Collections, Multithreading, Exception Handling and advanced concepts.
 </p>
-
 <div class="video-meta">
-<span>? Popular</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>Popular</span>
 <span>PDF + Tutorial</span>
 </div>
-
 </div>
-
 </a>
-
 </div>
 
 </div>
 
 <div id="notes-python" class="notes-tab-content" style="display:none;">
-
 <div class="notes-list">
 
 <a href="https://www.geeksforgeeks.org/python/python-programming-language-tutorial/"
@@ -591,19 +293,15 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>?? Python Complete Tutorial</h4>
-
+<h4> Python Complete Tutorial</h4>
 <p>
 Learn Python basics, OOP, data structures, file handling, exception handling and advanced concepts.
 </p>
-
 <div class="video-meta">
-<span>? Popular</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>Popular</span>
 <span>PDF + Tutorial</span>
 </div>
-
 </div>
-
 </a>
 
 <a href="https://www.geeksforgeeks.org/python/python-a-z-quick-notes/"
@@ -612,21 +310,16 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>?? Python A�Z Quick Notes</h4>
-
+<h4> Python AZ Quick Notes</h4>
 <p>
 Comprehensive quick reference covering Python syntax, built-in functions, libraries and interview topics.
 </p>
-
 <div class="video-meta">
-<span>? Popular</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>Popular</span>
 <span>PDF + Notes</span>
 </div>
-
 </div>
-
 </a>
-
 </div>
 
 </div>
@@ -649,7 +342,7 @@ Comprehensive quick reference covering Python syntax, built-in functions, librar
 
 <div class="track-section-header">
 
-<div class="track-section-icon">??</div>
+<div class="track-section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
 
 <h2>Interview Questions</h2>
 
@@ -658,7 +351,6 @@ Comprehensive quick reference covering Python syntax, built-in functions, librar
 </div>
 
 <div id="interview-cpp" class="interview-tab-content">
-
 <div class="interview-grid">
 
 <a href="https://www.interviewbit.com/cpp-interview-questions/"
@@ -667,19 +359,15 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>Top 50+ C++ Interview Questions � InterviewBit</h4>
-
+<h4>Top 50+ C++ Interview Questions  InterviewBit</h4>
 <p>
 Covers fresher, experienced and advanced C++ questions including OOP, STL, templates, smart pointers, multithreading and embedded C++.
 </p>
-
 <div class="video-meta">
-<span>? Popular</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>Popular</span>
 <span>InterviewBit</span>
 </div>
-
 </div>
-
 </a>
 
 <a href="https://www.geeksforgeeks.org/cpp/cpp-interview-questions/"
@@ -688,27 +376,21 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>Top 50+ C++ Interview Questions � GeeksforGeeks</h4>
-
+<h4>Top 50+ C++ Interview Questions  GeeksforGeeks</h4>
 <p>
 Beginner to expert level C++ interview questions covering basics, OOP, memory management, STL, polymorphism and advanced concepts.
 </p>
-
 <div class="video-meta">
-<span>? Popular</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>Popular</span>
 <span>GeeksforGeeks</span>
 </div>
-
 </div>
-
 </a>
-
 </div>
 
 </div>
 
 <div id="interview-java" class="interview-tab-content" style="display:none;">
-
 <div class="interview-grid">
 
 <a href="https://www.geeksforgeeks.org/java/java-interview-questions/"
@@ -717,19 +399,15 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>Top 50+ Java Interview Questions � GeeksforGeeks</h4>
-
+<h4>Top 50+ Java Interview Questions  GeeksforGeeks</h4>
 <p>
 Beginner to expert level Java interview questions covering OOP, Collections, Multithreading, Exception Handling and advanced concepts.
 </p>
-
 <div class="video-meta">
-<span>? Popular</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>Popular</span>
 <span>GeeksforGeeks</span>
 </div>
-
 </div>
-
 </a>
 
 <a href="https://www.interviewbit.com/java-interview-questions/"
@@ -738,27 +416,21 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>Top 50+ Java Interview Questions � InterviewBit</h4>
-
+<h4>Top 50+ Java Interview Questions  InterviewBit</h4>
 <p>
 Covers fresher, experienced and advanced Java questions including OOP, Collections, Multithreading, JVM internals and design patterns.
 </p>
-
 <div class="video-meta">
-<span>? Popular</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>Popular</span>
 <span>InterviewBit</span>
 </div>
-
 </div>
-
 </a>
-
 </div>
 
 </div>
 
 <div id="interview-python" class="interview-tab-content" style="display:none;">
-
 <div class="interview-grid">
 
 <a href="https://www.interviewbit.com/python-interview-questions/"
@@ -767,19 +439,15 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>Top 50+ Python Interview Questions � InterviewBit</h4>
-
+<h4>Top 50+ Python Interview Questions  InterviewBit</h4>
 <p>
 Covers beginner to advanced Python questions including data structures, OOP, decorators, generators and concurrency.
 </p>
-
 <div class="video-meta">
-<span>? Popular</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>Popular</span>
 <span>InterviewBit</span>
 </div>
-
 </div>
-
 </a>
 
 <a href="https://pythonguides.com/python-interview-questions-and-answers/"
@@ -788,21 +456,16 @@ target="_blank">
 
 <div class="video-info">
 
-<h4>Python Interview Questions & Answers � PythonGuides</h4>
-
+<h4>Python Interview Questions & Answers  PythonGuides</h4>
 <p>
 Practical coding-based Python interview questions with detailed answers covering basics, scripting and real-world scenarios.
 </p>
-
 <div class="video-meta">
-<span>? Popular</span>
+<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>Popular</span>
 <span>PythonGuides</span>
 </div>
-
 </div>
-
 </a>
-
 </div>
 
 </div>
@@ -921,9 +584,9 @@ WhatsApp
 <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
 Join Community
 </button>
-</div>
 
-<!-- --- POPUP � STARTUP --- -->
+
+<!-- --- POPUP  STARTUP --- -->
 <div class="popup-overlay" id="startupOverlay">
 <div class="popup">
 <button class="popup-close" id="startupClose">
@@ -936,17 +599,21 @@ Join Community
 <div class="fg"><input type="email" id="startupEmail" placeholder="Email *" required><div class="err-msg">Please enter a valid email</div></div>
 <div class="fg"><input type="tel" id="startupPhone" placeholder="Phone Number *" required><div class="err-msg">Please enter a valid 10-digit phone</div></div>
 <div class="fg"><textarea id="startupIdea" placeholder="Your Startup Idea *" required></textarea><div class="err-msg">Please share your idea</div></div>
-<button type="submit" class="popup-submit">Submit Idea ?</button>
+<button type="submit" class="popup-submit">Submit Idea <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
 </form>
 <div class="popup-success" id="startupSuccess">
-<div class="check">?</div>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
 <h3>Idea Submitted!</h3>
-<p>We'll review and get back to you soon. Start building! ??</p>
+<p>We'll review and get back to you soon. Start building! </p>
 </div>
 </div>
 </div>
 
 <script src="script.js"></script>
+
+
 </body>
 </html>
+
+
 
